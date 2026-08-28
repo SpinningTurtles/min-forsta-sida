@@ -1,4 +1,49 @@
-
 <link rel="stylesheet" href="style.css">
-<h1>Välkommen till min första Github sida.</h1><p style="color: white;">Under konstruktion</p><img src="wood.jpg" width="750px">
-<a href="fih.html">fih side!!!!</a>
+
+<div class="banner">
+    <img src="wood.jpg" alt="Träbakgrund">
+    <h1>Välkommen till min sida</h1>
+</div>
+
+<div class="content">
+    <p>Under konstruktion</p>
+    <a href="fih.html">fih side!!!!</a>
+</div>
+
+Lägg sedan detta i style.css:
+
+body {
+    margin: 0;
+    background-color: #222;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+.banner {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+}
+
+.banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.banner h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    color: white;
+    font-size: 40px;
+    text-shadow: 2px 2px 5px black;
+    white-space: nowrap;
+}
+
+.content {
+    padding: 30px;
+}
