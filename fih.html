@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Swimming Fish</title>
+
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background: #75d7f5;
+    }
+
+    .ocean {
+      width: 100vw;
+      height: 100vh;
+      position: relative;
+      background: linear-gradient(#51c8ed, #087eb5);
+      overflow: hidden;
+    }
+
+    /* Fish */
+    .fish {
+      position: absolute;
+      top: 45%;
+      left: -150px;
+      width: 120px;
+      height: 70px;
+      animation: swim 8s linear infinite;
+    }
+
+    .body {
+      position: absolute;
+      width: 90px;
+      height: 60px;
+      background: orange;
+      border-radius: 50%;
+      top: 5px;
+      left: 20px;
+    }
+
+    /* Tail */
+    .tail {
+      position: absolute;
+      left: 0;
+      top: 15px;
+      width: 0;
+      height: 0;
+      border-top: 25px solid transparent;
+      border-bottom: 25px solid transparent;
+      border-right: 35px solid orange;
+      animation: tailMove 0.4s ease-in-out infinite alternate;
+    }
+
+    /* Eye */
+    .eye {
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      background: white;
+      border-radius: 50%;
+      top: 18px;
+      right: 18px;
+    }
+
+    .eye::after {
+      content: "";
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      background: black;
+      border-radius: 50%;
+      top: 3px;
+      left: 3px;
+    }
+
+    /* Bubbles */
+    .bubble {
+      position: absolute;
+      bottom: -50px;
+      width: 15px;
+      height: 15px;
+      border: 2px solid white;
+      border-radius: 50%;
+      opacity: 0.6;
+      animation: bubbleUp 5s linear infinite;
+    }
+
+    .bubble:nth-child(2) {
+      left: 20%;
+      animation-delay: 1s;
+    }
+
+    .bubble:nth-child(3) {
+      left: 60%;
+      animation-delay: 2s;
+    }
+
+    .bubble:nth-child(4) {
+      left: 80%;
+      animation-delay: 3s;
+    }
+
+    /* Swimming animation */
+    @keyframes swim {
+      0% {
+        left: -150px;
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-40px);
+      }
+
+      100% {
+        left: 110%;
+        transform: translateY(20px);
+      }
+    }
+
+    @keyframes tailMove {
+      from {
+        transform: rotate(-8deg);
+      }
+
+      to {
+        transform: rotate(8deg);
+      }
+    }
+
+    @keyframes bubbleUp {
+      0% {
+        bottom: -50px;
+        transform: translateX(0);
+      }
+
+      100% {
+        bottom: 110%;
+        transform: translateX(50px);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="ocean">
+
+    <div class="fish">
+      <div class="tail"></div>
+      <div class="body">
+        <div class="eye"></div>
+      </div>
+    </div>
+
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+
+  </div>
+
+</body>
+</html>
